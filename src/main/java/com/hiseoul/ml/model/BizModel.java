@@ -1,12 +1,14 @@
 package com.hiseoul.ml.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import javax.persistence.Column;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,71 +19,66 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class BizModel {
+public class BizModel{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private String biz_model_uuid;
+	@Column(name = "biz_model_uuid")
+	private String bizModelUuid;
+	
+	private String biz_model_contents;
 	private String biz_model_name;
 	private String biz_model_type;
-	private String biz_model_contents;
-	private Timestamp biz_model_write_date;
 	private Timestamp biz_model_update_date;
 	private String biz_model_use_yn;
+	private Timestamp biz_model_write_date;
 	
-	public String getBizModel_uuid() {
-		return biz_model_uuid;
-	}
+	public String getBizModelUuid() {
+		return bizModelUuid;
+	}	
+	public void setBizModelUuid(String bizModelUuid) {
+		this.bizModelUuid = bizModelUuid;
+	}	
 	
-	public void setBizModel_uuid(String uuid) {
-		this.biz_model_uuid = uuid;
-	}
-	
-	public String getBizModel_name() {
-		return biz_model_name;
-	}
-	
-	public void setBizModel_name(String name) {
-		this.biz_model_name = name;
-	}
-	
-	public String getBizModel_type() {
-		return biz_model_type;
-	}
-	
-	public void setBizModel_type(String type) {
-		this.biz_model_type = type;
-	}
-	
-	public String getBizModel_contents() {
+	public String getBizModelContents() {
 		return biz_model_contents;
 	}
-	
-	public void setBizModel_contents(String contents) {
-		this.biz_model_contents = contents;
+	public void setBizModelContents(String biz_model_contents) {
+		this.biz_model_contents = biz_model_contents;
 	}
 	
-	public Timestamp getBizModel_write_date() {
-		return biz_model_write_date;
+	public String getBizModelName() {
+		return biz_model_name;
+	}
+	public void setBizModelName(String biz_model_name) {
+		this.biz_model_name = biz_model_name;
+	}
+
+	public String getBizModelType() {
+		return biz_model_type;
+	}
+	public void setBizModelType(String biz_model_type) {
+		this.biz_model_type = biz_model_type;
 	}
 	
-	public void setBizModel_write_date(Timestamp write_date) {
-		this.biz_model_write_date = write_date;
-	}
-	
-	public Timestamp getBizModel_update_date() {
+	public Timestamp getBizModelUpdatedate() {
 		return biz_model_update_date;
 	}
-	
-	public void setBizModel_update_date(Timestamp update_date) {
-		this.biz_model_update_date = update_date;
+	public void setBizModelUpdatedate(Timestamp biz_model_update_date) {
+		this.biz_model_update_date = biz_model_update_date;
 	}
 	
-	public String getBizModel_use_yn() {
+	public String getBizModelUseyn() {
 		return biz_model_use_yn;
 	}
+	public void setBizModelUseyn(String biz_model_use_yn) {
+		this.biz_model_use_yn = biz_model_use_yn;
+	}
 	
-	public void setBizModel_use_yn(String use_yn) {
-		this.biz_model_use_yn = use_yn;
+	public Timestamp getBizModelWritedate() {
+		return biz_model_write_date;
+	}
+	public void setBizModelWritedate(Timestamp biz_model_write_date) {
+		this.biz_model_write_date = biz_model_write_date;
 	}
 }
