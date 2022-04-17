@@ -18,11 +18,11 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class MenuCate {
+public class MenuCate{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	@Column(name="cate_no")
+	@Column(name = "cate_no")
 	private Integer cateNo;
 	
 	private String menu_name;
@@ -33,67 +33,53 @@ public class MenuCate {
 	private Timestamp write_date;
 	private Timestamp update_date;
 	
-	public Integer getCateNo() {
+	public Integer getCateno() {
 		return cateNo;
-	}
-	
-	public void setCateNo(Integer cateno) {
-		this.cateNo = cateno;
-	}
-	
-	public String getmenucateName() {
+	}	
+	public void setNo(Integer cateNo) {
+		this.cateNo = cateNo;
+	}	
+	public String getMenuname() {
 		return menu_name;
 	}
-	
-	public void setmenucateName(String catename) {
-		this.menu_name = catename;
+	public void setMenuname(String menu_name) {
+		this.menu_name = menu_name;
 	}
-	
-	public Integer getmenucatePerm() {
+	public Integer getMenuperm() {
 		return menu_perm;
 	}
-	
-	public void setmenucatePerm(Integer cateperm) {
-		this.menu_perm = cateperm;
+	public void setMenuperm(Integer menu_perm){
+		this.menu_perm = menu_perm;
 	}
-	
-	public Integer getmenucateparantNo() {
+	public Integer getParantno() {
 		return parant_no;
 	}
-	
-	public void setmenucateparantNo(Integer parantno) {
-		this.parant_no = parantno;
+	public void setParantno(Integer parant_no) {
+		this.parant_no = parant_no;
 	}
-	
-	public String getmenucateUri() {
+	public String getUri() {
 		return uri;
 	}
-	
-	public void setmenucateUri(String cateuri) {
-		this.uri = cateuri;
+	public void setUri(String uri){
+		this.uri = uri;
 	}
-	
-	public String getmenucateUseyn() {
+	public String getMenuuseyn() {
 		return menu_use_yn;
 	}
-	
-	public void setmenucateUseyn(String cateuseyn) {
-		this.menu_use_yn = cateuseyn;
-	}
-	
-	public Timestamp getmenucateWritedate() {
+	public void setMenuuseyn(String menu_use_yn) {
+		this.menu_use_yn = menu_use_yn;
+	}	
+	public Timestamp getWritedate() {
 		return write_date;
 	}
-	
-	public void setmenucateWritedate(Timestamp writedate) {
-		this.write_date = writedate;
-	}
-	
-	public Timestamp getmenucateUpdatedate() {
+	public void setWritedate(Timestamp write_date) {
+		this.write_date = write_date;
+	}	
+	public Timestamp getUpdatedate() {
 		return update_date;
 	}
-	
-	public void setmenucateUpdatedate(Timestamp updatedate) {
-		this.update_date = updatedate;
-	}
+	public void setUpdatedate(Timestamp update_date) {
+		this.update_date = update_date;
+	}	
 }
+

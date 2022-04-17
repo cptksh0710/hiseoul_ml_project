@@ -1,7 +1,6 @@
 package com.hiseoul.ml.controller;
 
 import org.apache.logging.log4j.LogManager;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,13 +32,11 @@ public class CctvInfoRestController{
 			Result result = cctvinfoService.retrieveCctvInfoList();
 			return result;
 		}
-		
 		@GetMapping("/{cctvUuid}")
 		public Result retrieveCctvInfo(@PathVariable String cctvUuid) {
 			Result result = cctvinfoService.retrieveCctvInfo(cctvUuid);
-			return result;
+		    return result;
 		}
-		
 		@PostMapping
 		public Result createCctvInfo(@ModelAttribute CctvInfo cctvinfo) {
 			Result result = cctvinfoService.createCctvInfo(cctvinfo);

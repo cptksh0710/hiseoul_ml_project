@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.hiseoul.ml.model.Member;
 
 @Repository
-public interface MemberRepository extends JpaRepository<Member,Integer> {
-	public List<Member> findAllByOrderByMemberNoDesc();
+public interface MemberRepository extends JpaRepository<Member, Integer> {
+	public List<Member> findAllByOrderByNoDesc();
 }

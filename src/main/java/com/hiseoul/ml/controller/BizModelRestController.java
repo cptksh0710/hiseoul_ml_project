@@ -1,7 +1,6 @@
 package com.hiseoul.ml.controller;
 
 import org.apache.logging.log4j.LogManager;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,13 +32,11 @@ public class BizModelRestController{
 			Result result = bizmodelService.retrieveBizModelList();
 			return result;
 		}
-		
 		@GetMapping("/{bizModelUuid}")
 		public Result retrieveBizModel(@PathVariable String bizModelUuid) {
 			Result result = bizmodelService.retrieveBizModel(bizModelUuid);
-			return result;
+		    return result;
 		}
-		
 		@PostMapping
 		public Result createBizModel(@ModelAttribute BizModel bizmodel) {
 			Result result = bizmodelService.createBizModel(bizmodel);
@@ -56,5 +53,6 @@ public class BizModelRestController{
 		public Result deleteBizModel(@RequestParam String bizModelUuid) {
 			Result result = bizmodelService.deleteBizModel(bizModelUuid);
 			return result;
-		}	
+		}
+		
 }

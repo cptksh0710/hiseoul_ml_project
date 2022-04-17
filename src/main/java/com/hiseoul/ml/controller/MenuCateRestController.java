@@ -1,7 +1,6 @@
 package com.hiseoul.ml.controller;
 
 import org.apache.logging.log4j.LogManager;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,13 +32,11 @@ public class MenuCateRestController{
 			Result result = menucateService.retrieveMenuCateList();
 			return result;
 		}
-		
-		@GetMapping("/{cateno}")
-		public Result retrieveMenuCate(@PathVariable int cateno) {
-			Result result = menucateService.retrieveMenuCate(cateno);
-			return result;
+		@GetMapping("/{cateNo}")
+		public Result retrieveMenuCate(@PathVariable Integer cateNo) {
+			Result result = menucateService.retrieveMenuCate(cateNo);
+		    return result;
 		}
-		
 		@PostMapping
 		public Result createMenuCate(@ModelAttribute MenuCate menucate) {
 			Result result = menucateService.createMenuCate(menucate);
@@ -53,8 +50,8 @@ public class MenuCateRestController{
 		}
 		
 		@DeleteMapping
-		public Result deleteMenuCate(@RequestParam int cateno) {
-			Result result = menucateService.deleteMenuCate(cateno);
+		public Result deleteMenuCate(@RequestParam int cateNo) {
+			Result result = menucateService.deleteMenuCate(cateNo);
 			return result;
 		}
 		

@@ -25,13 +25,21 @@ public class MlCase{
 	@Column(name = "ml_case_uuid")
 	private String mlCaseUuid;
 	
-	private String ml_case_biz_model_uuid;
-	private String ml_case_cctv_uuid;
+	@Column(name = "ml_case_biz_model_uuid")
+	private String mlCaseBizModelUuid;
+
+	@Column(name = "ml_case_cctv_uuid")
+	private String mlCaseCctvUuid;
+	
 	private String ml_case_count;
 	private String ml_case_ml_number;
 	private String ml_case_name;
+	
 	private String ml_case_pre_count;
-	private String ml_case_region_uuid;
+
+	@Column(name = "ml_case_region_uuid")
+	private String mlCaseRegionUuid;
+	
 	private String ml_case_type;
 	private Timestamp ml_case_update_date;
 	private String ml_case_use_yn;
@@ -45,16 +53,16 @@ public class MlCase{
 	}	
 	
 	public String getMlcaseBizModelUuid() {
-		return ml_case_biz_model_uuid;
+		return mlCaseBizModelUuid;
 	}
-	public void setMlcaseBizModelUuid(String ml_case_biz_model_uuid) {
-		this.ml_case_biz_model_uuid = ml_case_biz_model_uuid;
+	public void setMlcaseBizModelUuid(String mlCaseBizModelUuid) {
+		this.mlCaseBizModelUuid = mlCaseBizModelUuid;
 	}
 	public String getMlcaseCctvUuid() {
-		return ml_case_cctv_uuid;
+		return mlCaseCctvUuid;
 	}
-	public void setMlcaseCctvUuid(String ml_case_cctv_uuid){
-		this.ml_case_cctv_uuid = ml_case_cctv_uuid;
+	public void setMlcaseCctvUuid(String mlCaseCctvUuid){
+		this.mlCaseCctvUuid = mlCaseCctvUuid;
 	}
 	public String getMlcaseCount() {
 		return ml_case_count;
@@ -82,10 +90,10 @@ public class MlCase{
 		this.ml_case_pre_count = ml_case_pre_count;
 	}
 	public String getMlcaseRegionUuid() {
-		return ml_case_region_uuid;
+		return mlCaseRegionUuid;
 	}
-	public void setMlcaseRegionUuid(String ml_case_region_uuid){
-		this.ml_case_region_uuid = ml_case_region_uuid;
+	public void setMlcaseRegionUuid(String mlCaseRegionUuid){
+		this.mlCaseRegionUuid = mlCaseRegionUuid;
 	}
 	public String getMlcaseType() {
 		return ml_case_type;

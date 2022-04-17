@@ -30,7 +30,6 @@ public class CctvInfoServiceImpl implements CctvInfoService{
 		}
 		return result;
 	}
-	
 	public Result deleteCctvInfo(String cctvUuid) {
 		Result result = new Result();
 		boolean isPresent = repository.findById(cctvUuid).isPresent();
@@ -60,10 +59,10 @@ public class CctvInfoServiceImpl implements CctvInfoService{
 	
 	@Override
 	public Result retrieveCctvInfo(String cctvUuid) {
-		Optional<CctvInfo> optionalCctvInfo = repository.findById(cctvUuid);
+		Optional<CctvInfo> optionalCctvUuid = repository.findById(cctvUuid);
 		Result result = new Result();
-		if(optionalCctvInfo.isPresent()) {
-			result.setPayload(optionalCctvInfo.get());
+		if(optionalCctvUuid.isPresent()) {
+			result.setPayload(optionalCctvUuid.get());
 		}else {
 			result.setError(new ErrorResponse(ServiceResult.NOTEXIST.toString()));
 		}

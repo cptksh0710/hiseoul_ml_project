@@ -20,7 +20,7 @@ public class MemberServiceImpl implements MemberService{
 	MemberRepository repository;
 	
 	public Result updateMember(Member member) {
-		Optional<Member> search = repository.findById(member.getMemberNo());
+		Optional<Member> search = repository.findById(member.getNo());
 		Result result = new Result();
 		if(search.isPresent()) {
 			member = repository.save(member);
@@ -30,14 +30,13 @@ public class MemberServiceImpl implements MemberService{
 		}
 		return result;
 	}
-	
-	public Result deleteMember(int memberno) {
+	public Result deleteMember(int no) {
 		Result result = new Result();
-		boolean isPresent = repository.findById(memberno).isPresent();
+		boolean isPresent = repository.findById(no).isPresent();
 		if(!isPresent) {
 			result.setError(new ErrorResponse(ServiceResult.NOTEXIST.toString()));
 		}else {
-			repository.deleteById(memberno);
+			repository.deleteById(no);
 		}
 		return result;
 	}
@@ -52,18 +51,18 @@ public class MemberServiceImpl implements MemberService{
 	
 	@Override
 	public Result retrieveMemberList() {
-		List<Member> list = repository.findAllByOrderByMemberNoDesc();
+		List<Member> list = repository.findAllByOrderByNoDesc();
 		Result result = new Result();
 		result.setPayload(list);
 		return result;
 	}
 	
 	@Override
-	public Result retrieveMember(int memberno) {
-		Optional<Member> optionalmember = repository.findById(memberno);
+	public Result retrieveMember(int no) {
+		Optional<Member> optionalMember = repository.findById(no);
 		Result result = new Result();
-		if(optionalmember.isPresent()) {
-			result.setPayload(optionalmember.get());
+		if(optionalMember.isPresent()) {
+			result.setPayload(optionalMember.get());
 		}else {
 			result.setError(new ErrorResponse(ServiceResult.NOTEXIST.toString()));
 		}

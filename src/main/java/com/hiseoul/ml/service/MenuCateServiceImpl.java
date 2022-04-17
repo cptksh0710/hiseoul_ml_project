@@ -20,7 +20,7 @@ public class MenuCateServiceImpl implements MenuCateService{
 	MenuCateRepository repository;
 	
 	public Result updateMenuCate(MenuCate menucate) {
-		Optional<MenuCate> search = repository.findById(menucate.getCateNo());
+		Optional<MenuCate> search = repository.findById(menucate.getCateno());
 		Result result = new Result();
 		if(search.isPresent()) {
 			menucate = repository.save(menucate);
@@ -30,14 +30,13 @@ public class MenuCateServiceImpl implements MenuCateService{
 		}
 		return result;
 	}
-	
-	public Result deleteMenuCate(int cateno) {
+	public Result deleteMenuCate(int cateNo) {
 		Result result = new Result();
-		boolean isPresent = repository.findById(cateno).isPresent();
+		boolean isPresent = repository.findById(cateNo).isPresent();
 		if(!isPresent) {
 			result.setError(new ErrorResponse(ServiceResult.NOTEXIST.toString()));
 		}else {
-			repository.deleteById(cateno);
+			repository.deleteById(cateNo);
 		}
 		return result;
 	}
@@ -59,8 +58,8 @@ public class MenuCateServiceImpl implements MenuCateService{
 	}
 	
 	@Override
-	public Result retrieveMenuCate(int cateno) {
-		Optional<MenuCate> optionalMenuCate = repository.findById(cateno);
+	public Result retrieveMenuCate(int cateNo) {
+		Optional<MenuCate> optionalMenuCate = repository.findById(cateNo);
 		Result result = new Result();
 		if(optionalMenuCate.isPresent()) {
 			result.setPayload(optionalMenuCate.get());

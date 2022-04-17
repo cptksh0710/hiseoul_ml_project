@@ -44,6 +44,6 @@ public class Board{
 		return writer;
 	}
 	public void setWriter(String writer) {
-		this.writer = writer;
+		this.writer =writer;
 	}
 }
